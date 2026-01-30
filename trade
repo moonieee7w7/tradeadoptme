@@ -1,31 +1,31 @@
 wait(60)
 getgenv().Config = {
 Dashboard = {
-Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
-GroupName = "adoptme", -- Group name for organizing accounts on dashboard
+Enabled = false, -- Connect to Adopt Me dashboard To Control Script/View Stats (https://zekehub.com/dashboard/adoptme)
+GroupName = "vps1", -- Group name for organizing accounts on dashboard
 },
-BabyFarm = true, -- Does baby farm
+BabyFarm = false, -- Does baby farm
 PetFarm = {
-Enabled = true, -- Enables the Pet Farm
+Enabled = false, -- Enables the Pet Farm
 FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
 BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
+EggTypes = {}, -- Which eggs to equip ({} = any egg, or {"cracked_egg", "royal_egg"} for specific)
 BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
 MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
 FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
-PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
+PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
 SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
 SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
 },
 AutoTrade = {
 Enabled = true, -- Enable auto trading
 AutoAcceptTrades = false, -- Accept incoming trade requests
-Usernames = {"Twilxghtz"}, -- Players to send trades to
+Usernames = {"Lzjf"}, -- Players to send trades to
 TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
-Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+Categories = {"pets", "pet_accessories"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
 Items = {}, -- Item IDs when TradeMode = "specific"
 ItemCounts = {}, -- Max count per item in Items array
-PetTypes = {"mega"}, -- {} = all, {"regular", "neon", "mega"}
+PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
 Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
 AutoLeaveAfterTrades = true, -- Leave trade area after completing trades
 },
@@ -38,9 +38,10 @@ MaxPerType = {}, -- {} = unlimited, {dog = 2, cat = 1} = limits per pet type
 },
 Settings = {
 AutoShowUI = true, -- Load the UI on script start (main overlay disable for less memory usage)
-ShowOverlay = false, -- Show stats overlay (disables 3D rendering)
-ReduceGraphics = false, -- Reduce graphics quality to minimum
+ShowOverlay = true, -- Show stats overlay (disables 3D rendering)
+ReduceGraphics = true, -- Reduce graphics quality to minimum
 FPSCap = 0, -- FPS cap option (0 = uncapped)
+LureId = "ice_dimension_2025_ice_soup_bait" -- what lure to use for example: "ice_dimension_2025_ice_soup_bait"
 },
 AutoPotion = {
 Enabled = false, -- Use age potions on pets to level them up
@@ -56,8 +57,8 @@ Enabled = false, -- Send bucks to another player
 TargetPlayer = "", -- Username of player to pay bucks to
 },
 AutoOpen = {
-Enabled = false, -- Open gift boxes, baits, etc automatically
-Items = {}, -- Item IDs to auto open
+Enabled = true, -- Open gift boxes, baits, etc automatically
+Items = {"2d_tuesdays_2025_box", "admin_abuse_box"}, -- Item IDs to auto open
 },
 AutoRecycle = {
 Enabled = false, -- Recycle pets at recycler for rewards
@@ -85,5 +86,5 @@ Enabled = false, -- Skip certain farming tasks
 ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
 },
 };
-script_key="OQtPcefIXokLTHbLAYDWspsTmCNlftGG"
+getgenv().scriptkey="xunOuGBnYWfSweTvShDlvQpOGdHMtuck"
 loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
